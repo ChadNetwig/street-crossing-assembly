@@ -2,7 +2,7 @@
 
 A Raspberry Pi assembly language project simulating a pedestrian crosswalk system, built entirely in ARM assembly.
 
-[![Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+[![Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)](https://youtu.be/pz-KCKyuoXM)
 
 ---
 
