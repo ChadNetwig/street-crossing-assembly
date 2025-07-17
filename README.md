@@ -31,7 +31,7 @@ Using the WiringPi library, the program lights up 5 LEDs (traffic and walk/donâ€
 
 **Breadboard Schematic:**
 
-<img src="./assets/streetxing-schematic.jpg" alt="Breadboard Schematic" width="500"/>
+<img src="./assets/streetxing-schematic.jpg" alt="Breadboard Schematic" width="700"/>
 
 **Breadboard Build - Walk Sequence:**
 
