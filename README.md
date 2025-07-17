@@ -1,54 +1,38 @@
 # 🚦 Street Crossing Traffic Signal Simulation
 
-A Raspberry Pi assembly language project simulating a pedestrian crosswalk system, built entirely in ARM assembly.  
+A Raspberry Pi assembly language project simulating a pedestrian crosswalk system, built entirely in ARM assembly.
 
 [![Demo Video](https://img.shields.io/badge/Watch-Demo%20Video-red)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
 
 ---
 
-## 📌 Project Overview
+## 📖 Overview
 
-**Course:** CS-170 Assembly Language  
-**Institution:** San Bernardino Valley College  
-**Instructor:** Professor Paul J. Conrad  
-**Date Completed:** May 2021  
+This project demonstrates how to control GPIO pins directly in ARM assembly to simulate a crosswalk traffic signal with a button trigger.
 
-This project demonstrates:
-- Direct hardware control of GPIO pins
-- Assembly logic for state sequencing
-- Integration with LEDs and physical button inputs using the WiringPi library
+Using the WiringPi library, the program lights up 5 LEDs (traffic and walk/don’t walk) in a timed sequence and responds to user input.
 
 ---
 
-## 🎯 Objectives
+## ✨ Key Features
 
-- Use ARM assembly to control GPIO pins on a Raspberry Pi 3B+
-- Simulate a traffic signal and walk/don't walk signals
-- Implement timing and blinking sequences triggered by button press
-- Practice low-level debugging and I/O management
-
----
-
-## 🛠️ Components & Environment
-
-- **Hardware:**
-  - Raspberry Pi 3B+
-  - CanaKit Ultimate Starter Kit
-  - Breadboard, resistors, 5 LEDs (traffic & walk signals), pushbutton
-- **Software:**
-  - Raspbian Linux 5.4.83-v7+
-  - `g++` cross-assembler
-  - WiringPi library for GPIO
-- **Programming Language:** ARM Assembly
+- **Button-triggered sequence**: starts when the pushbutton is pressed
+- **Three-stage simulation**:
+  1. Walk signal active
+  2. Blinking “hurry up” signal
+  3. Don’t Walk / Traffic resumes
+- **Direct hardware control** using ARM assembly (`wiringPiSetup`, `digitalWrite`, `digitalRead`)
+- **Console messages** showing sequence progression
+- **Educational focus** on low-level programming concepts
 
 ---
 
 ## 🖼️ Screenshots
 
-> _(Replace with your actual image paths or URLs)_
+> _(Replace with your actual file paths or URLs)_
 
 **Breadboard Schematic:**
-![Schematic](./streetxing-schematic.jpg)
+![Schematic](./assets/streetxing-schematic.jpg)
 
 **Breadboard Build - Walk Sequence:**
 ![Walk](./breadboard-seq1-walk.jpg)
@@ -67,79 +51,49 @@ This project demonstrates:
 
 ---
 
-## 🎮 Program Behavior
+## 🧰 Technologies Used
 
-**Sequence Overview:**
-
-1️⃣ **Walk Sequence**  
-- Red traffic signal + Green walk signal ON  
-- Duration: 6 seconds
-
-2️⃣ **Hurry Up Sequence**  
-- Yellow traffic + Green walk signals BLINK  
-- 14 blinks with 300ms intervals
-
-3️⃣ **Don't Walk Sequence**  
-- Green traffic + Red walk signal ON  
-- Duration: 6 seconds
-
-Program exits after sequence completion.
+- **Language:** ARM Assembly
+- **Platform:** Raspberry Pi 3B+
+- **OS:** Raspbian Linux 5.4.83-v7+
+- **Library:** WiringPi (GPIO control)
+- **Tools:**
+  - g++ cross-assembler
+  - Breadboard with LEDs and pushbutton
+  - CanaKit Ultimate Starter Kit
 
 ---
 
-## 🧩 Core Logic (Assembly)
+## ⚙️ How to Build and Run
 
-- Configure GPIO pins as INPUT or OUTPUT
-- Poll button input (`digitalRead`)
-- Use delay loops (`delay`) for timing
-- Loop counter to control blinking
-- `printf` output for status messages in console
+1. **Install WiringPi** (on Raspbian):
 
-> **Note:** Full source code available in [`streetxing.s`](./streetxing.s).  
-*(Code is shared here for educational purposes; please do not plagiarize.)*
+       sudo apt-get install wiringpi
 
----
+2. **Assemble the code:**
 
-## 🧪 Testing & Debugging
+       g++ streetxing.s -lwiringPi -g -o streetxing
 
-- Verified GPIO outputs via LEDs
-- Used console logs to monitor sequence progress
-- Validated timing delays with stopwatch
-- Iteratively tested each state before full integration
+3. **Run the program:**
+
+       sudo ./streetxing
+
+**Note:** `sudo` is required for GPIO access.
 
 ---
 
-## 🚧 Challenges & Solutions
+## ⚠️ Important Notes
 
-**Challenge:**  
-Limited examples for WiringPi assembly integration.
-
-**Solution:**  
-- Studied C examples to understand WiringPi function signatures
-- Adapted GPIO logic and `pinMode` calls manually in assembly
-- Debugged pin state transitions with console logs and LED visual feedback
-
----
-
-## 🌟 Highlights
-
-- Full assembly implementation without high-level C code wrappers
-- Clean separation of sequences
-- Real hardware control of LEDs and button input
-- Visual feedback for each crosswalk state
-
----
-
-## 🎬 Demo Video
-
-[Watch the demo on YouTube](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+- This project is for **educational demonstration only**.
+- Full source code is included for reference—**please do not plagiarize** in academic settings.
+- Hardware wiring must match the pin definitions in the code (`LED_TRAF_RED`, etc.).
+- Timing delays and blink counts can be adjusted by modifying constants in `streetxing.s`.
 
 ---
 
 ## 📝 License
 
-This project is shared for **educational demonstration purposes only**.  
-Please do not submit this work as your own in any academic context.
+This project is shared for educational purposes.  
+**No warranty expressed or implied.**
 
 ---
-
