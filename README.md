@@ -30,22 +30,28 @@ Using the WiringPi library, the program lights up 5 LEDs (traffic and walk/don�
 ## 🖼️ Screenshots
 
 **Breadboard Schematic:**
-![Schematic](./assets/streetxing-schematic.jpg)
+
+<img src="./assets/streetxing-schematic.jpg" alt="Breadboard Schematic" width="500"/>
 
 **Breadboard Build - Walk Sequence:**
-![Walk](./assets/breadboard-seq1-walk.jpg)
+
+<img src="./assets/breadboard-seq1-walk.jpg" alt="Walk Sequence" width="500"/>
 
 **Breadboard Build - Hurry Up Sequence:**
-![Hurry](./assets/breadboard-seq2-hurry.jpg)
+
+<img src="./assets/breadboard-seq2-hurry.jpg" alt="Hurry Up Sequence" width="500"/>
 
 **Breadboard Build - Don't Walk Sequence:**
-![DontWalk](./assets/breadboard-seq3-dontwalk.jpg)
+
+<img src="./assets/breadboard-seq3-dontwalk.jpg" alt="Don't Walk Sequence" width="500"/>
 
 **Detailed Schematic:**
-![Detailed](./assets/streetxing-schematic-details.jpg)
+
+<img src="./assets/streetxing-schematic-details.jpg" alt="Detailed Schematic" width="500"/>
 
 **WiringPi Pinout Reference:**
-![WiringPi](./assets/wiringPi pinout.png)
+
+<img src="./assets/wiringPi pinout.png" alt="WiringPi Pinout" width="500"/>
 
 ---
 
